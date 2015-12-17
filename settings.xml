@@ -5,6 +5,9 @@
             <protocol>http</protocol>
             <host>200.189.113.254</host>
             <port>8000</port>
+        </proxy>
+        <proxy>
+            <active>true</active>
             <protocol>https</protocol>
             <host>200.189.113.254</host>
             <port>8000</port>
