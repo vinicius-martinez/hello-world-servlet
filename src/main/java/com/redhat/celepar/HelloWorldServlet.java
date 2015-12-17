@@ -2,6 +2,7 @@ package com.redhat.celepar;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/HelloWorld")
+@WebServlet("/")
 public class HelloWorldServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -26,9 +27,10 @@ public class HelloWorldServlet extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		writer.println(PAGE_HEADER);
 		writer.println("<h1>Hello World Servlet</h1>");
+		writer.println("<h2> Hostname: " + InetAddress.getLocalHost().getHostName()+ "</h2>");
+		writer.println("<h2> IP: " + InetAddress.getLocalHost()+ "</h2>");
 		writer.println(PAGE_FOOTER);
 		writer.close();
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
